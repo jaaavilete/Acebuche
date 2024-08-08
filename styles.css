@@ -31,12 +31,12 @@ header{
 nav ul{
     display: flex;
     justify-content: space-evenly;
-    gap: 20px;
+    gap: 25px;
 }
 nav ul li{
     list-style: none;
     font-family: "Inria Serif", serif;
-    font-weight: bold;
+    font-weight: 400;
     color:#FEFDFB;
 }
 /* ------------ Inicio ------------*/
@@ -49,7 +49,10 @@ nav ul li{
 .inicio{
     background-image: url(assets/inicio.png);
     background-attachment: fixed;
-    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -64,6 +67,7 @@ nav ul li{
 /* ------------ Bienvenida ------------*/
 
 .welcome{
+    position:relative;
     display:flex;
     align-items: center;
     background-color:#F8F4F1;
@@ -101,9 +105,8 @@ nav ul li{
     padding: 50px;
     display:flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 20%;
+    gap: 10%;
 }
 .novedades h2{
     background: linear-gradient(to right, #000,#3B5E21);
@@ -112,5 +115,55 @@ nav ul li{
     color:transparent;
     font-family: "Italiana", sans-serif;
     font-weight: 400;
-    font-size: 4em;
+    font-size: 3.4em;
+}
+
+.novedades-cards{
+    display: flex;
+    max-width:2600px;
+    gap: 50px;
+    margin:70px;
+}
+
+.novedades-card{
+    border-radius: 35px;
+}
+
+.novedades-card:first-child{
+    background-color: #EFEA7D;
+}
+
+.novedades-card:nth-child(2){
+    background-color: #CC6671;
+}
+
+.novedades-card:last-child{
+    background-color: #E2853E;
+}
+
+.novedades-text{
+    background-color: #fff;
+    border-radius: 35px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
+}
+.novedades-text h3{
+    margin-bottom: 10%;
+}
+.novedades-text p{
+    text-align: center;
+}
+
+.novedades-card-img img{
+    height:270px;
+    max-width: 270px;
+    border-radius: 35px 35px 0 0;
+}
+
+@media only screen and (max-width:500px){
+    .novedades-cards{
+        flex-direction: column;
+    }
 }
