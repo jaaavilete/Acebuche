@@ -14,7 +14,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
-const words = ["CALIDAD", "COMPROMISO", "PEDRO SANCHEZ DIMISION"];
+const words = ["Calidad", "Compromiso", "Acebuche"];
 let currentWordIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
@@ -28,12 +28,12 @@ function type() {
     
     if (!isDeleting && currentCharIndex < currentWord.length) {
         currentCharIndex++;
-        delay = 200; // Velocidad de escritura
+        delay = 230; // Velocidad de escritura
     } else if (isDeleting && currentCharIndex > 0) {
         currentCharIndex--;
         delay = 100; // Velocidad de borrado
     } else if (!isDeleting && currentCharIndex === currentWord.length) {
-        delay = 2000; // Tiempo de espera antes de borrar
+        delay = 3000; // Tiempo de espera antes de borrar
         isDeleting = true;
     } else if (isDeleting && currentCharIndex === 0) {
         isDeleting = false;
