@@ -1,0 +1,50 @@
+window.addEventListener('scroll', function() {
+    var header = document.querySelector('header');
+    var welcome = document.querySelector('.welcome');
+
+    // Obtener la posición del header y la sección de welcome
+    var headerBottom = header.getBoundingClientRect().bottom;
+    var welcomeTop = welcome.getBoundingClientRect().top;
+
+    // Cambiar el color de fondo del header cuando llegue a la sección welcome
+    if (headerBottom >= welcomeTop) {
+        header.style.backgroundColor = '#2F4F4F'; // Cambia a tu color preferido
+    } else {
+        header.style.backgroundColor = 'transparent'; // O vuelve al color original
+    }
+});
+
+const words = ["CALIDAD", "COMPROMISO", "PEDRO SANCHEZ DIMISION"];
+let currentWordIndex = 0;
+let currentCharIndex = 0;
+let isDeleting = false;
+let delay = 200;
+
+function type() {
+    const currentWord = words[currentWordIndex];
+    const displayText = currentWord.substring(0, currentCharIndex);
+    
+    document.getElementById('text').textContent = displayText;
+    
+    if (!isDeleting && currentCharIndex < currentWord.length) {
+        currentCharIndex++;
+        delay = 200; // Velocidad de escritura
+    } else if (isDeleting && currentCharIndex > 0) {
+        currentCharIndex--;
+        delay = 100; // Velocidad de borrado
+    } else if (!isDeleting && currentCharIndex === currentWord.length) {
+        delay = 2000; // Tiempo de espera antes de borrar
+        isDeleting = true;
+    } else if (isDeleting && currentCharIndex === 0) {
+        isDeleting = false;
+        currentWordIndex = (currentWordIndex + 1) % words.length; // Cambia a la siguiente palabra
+        delay = 500; // Tiempo de espera antes de comenzar la nueva palabra
+    }
+
+    setTimeout(type, delay);
+}
+
+// Iniciar el efecto
+type();
+
+
