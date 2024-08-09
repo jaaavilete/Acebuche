@@ -9,7 +9,12 @@
 }
 
 /* ------------ nav ------------*/
-
+li{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+}
 header{
     position: fixed;
     width:100vw;
@@ -18,6 +23,7 @@ header{
     align-items: center;
     height:10%;
     z-index: 10000000;
+    transition: background-color .4s;
 }
 
 .nav-title{
@@ -33,12 +39,12 @@ nav ul{
     justify-content: space-evenly;
     gap: 25px;
 }
-nav ul li{
-    list-style: none;
+nav ul li a{
     font-family: "Inria Serif", serif;
     font-weight: 400;
     color:#FEFDFB;
 }
+
 /* ------------ Inicio ------------*/
 .inicio{
     max-width: 100%;
@@ -68,6 +74,7 @@ nav ul li{
 
 .welcome{
     position:relative;
+    z-index: 5;
     display:flex;
     align-items: center;
     background-color:#F8F4F1;
@@ -102,35 +109,31 @@ nav ul li{
 /* ------------ Novedades ------------*/
 
 
-.hoja_izq{
-    width: 23%;
-    height: auto;
+.hoja{
     z-index: 100000;
     position: absolute;
-    margin-left: 0;
-    left: 0;
-    bottom: 5%;
+    bottom:0;
+    max-height:100%;
 }
 
-.hoja_der{
-    width: 23%;
-    height: auto;
-    z-index: 100000;
-    position: absolute;
-    margin-right: 0;
+.izq{
+    left: 0;
+}
+.der{
     right: 0;
-    bottom: 5%;
 }
 
 .novedades{
+    width:100%;
     background-color: #B4F9A4;
-    padding: 50px;
+    padding: 90px;
+    padding-bottom: 15vh;
     display:flex;
     flex-direction: column;
     align-items: center;
-    gap: 10%;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow:hidden;
 }
 
 .novedades h2{
@@ -141,24 +144,29 @@ nav ul li{
     font-family: "Italiana", sans-serif;
     font-weight: 400;
     font-size: 3.4em;
+    margin-bottom: 70px;
 }
 
 .novedades-cards{
     display: flex;
+    justify-content: center;
+    width:100%;
     max-width:2600px;
     gap: 70px;
-    margin:70px;
 }
 
 .novedades-card{
+    width:25%;
+    max-width: 300px;
     border-radius: 35px;
+    position:relative;
 }
 
-.novedades-card:nth-child(4){
+.novedades-card:first-child{
     background-color: #EFEA7D;
 }
 
-.novedades-card:nth-child(3){
+.novedades-card:nth-child(2){
     background-color: #CC6671;
 }
 
@@ -173,17 +181,24 @@ nav ul li{
     flex-direction: column;
     align-items: center;
     padding: 10%;
+    position:relative;
+    bottom: 0;
 }
 .novedades-text h3{
     margin-bottom: 10%;
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-align: center;
 }
 .novedades-text p{
     text-align: center;
+    font-family: "Inria Serif", serif;
 }
 
 .novedades-card-img img{
-    height:230x;
-    max-width: 230px;
+    max-width: 90%;
+    align-content: center;
     border-radius: 35px 35px 0 0;
 }
 
@@ -191,7 +206,6 @@ nav ul li{
 
 .cartas{
     width: 100%;
-    height: 100vh;
 }
 
 .cartas-h2{
@@ -199,75 +213,138 @@ nav ul li{
     font-weight: bold;
     font-size:3.3em;
     text-align: center;
-    margin: 20% 0;
-    margin-bottom: 5%;
+    margin: 90px;
     border-bottom: 2px #dbd6d6 solid;
 }
 
 .cartas-img{
     width: 35%;
+    min-width: 400px;
     border-radius: 20px;
 }
 
+.carta-content{
+    width: 100%;
+    background-color: #f8eada;
+    padding:5%;
+}
+
+.carta-container{
+    display: flex;
+    flex-grow: 2;
+    margin-bottom: 75px;
+    align-items: center;
+    /* max-width: 2000px; */ 
+}
 .text-container{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
-    padding: 5% 7%;
-    background-color: #f8eada;
-    height: 60%;
 }
-
-.cafe-container{
-    display: flex;
-    margin-bottom: 2%;
-    width: 100%;
-    align-items: center;
+.text-container h3{
+    font-family: "Inria Serif", serif;
+    font-weight: bold;
+    font-size: 2rem;
 }
-
-.cafe-container-der{
-    display: flex;
-    margin-bottom: 3%;
-    width: 100%;
-    align-items: center;
+.text-container p{
+    font-family: "Inria Serif", serif;
 }
-
 .card-button{
-    width: 80%;
+    width: 100%;
+    max-width: 600px;
     height: 40px;
     border-radius: 20px;
     border: none;
     background-color: #35634A;
     color: #fff;
 }
+/*--------------Populares----------------*/
 
+.populares{
+    width:100%;
+}
+.populares-title{
+    width:100%;
+    background-image: url(assets/carta.png);
+    background-position: center;
+    padding:5%;
+    margin-bottom:70px;
+}
+.populares h2{
+    font-family: "Inria Serif", serif;
+    font-weight: bold;
+    font-size:3.3em;
+    text-align: center;
+    color:#FEFDFB;
+}
 
-
+.populares-grid{
+    width:90%;
+    height:100vh;
+    display:grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:20px;
+    margin:auto;
+}
+.populares-grid img{
+    border: 2px #000;
+    max-width:100%;
+    max-height:100%;
+    object-fit: cover;
+    background-color: beige;
+}
+.populares-img1{
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+.populares-img2{
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+.populares-img3{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.populares-img4{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.populares-img5{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+.populares-img6{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+.populares-img7{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
 
 
                      /*-----------RESPONSIVE-------------*/
 
 
-@media only screen and (max-width:500px){
+@media only screen and (width < 800px){
     .novedades-cards{
         flex-direction: column;
+        align-items: center;
+    }
+    .novedades-card{
+        width:100%;
+    }
+    .hoja{
+        z-index: 0;
+        opacity: 0.8;
     }
 }
+@media only screen and (width < 1200px){
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-                                      /*--------------------------SECCIÓN: EFECTOS--------------------*/
+                 /*--------------------------SECCIÓN: EFECTOS--------------------*/
 
 
 
@@ -276,9 +353,9 @@ nav ul li{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Sans Serif', Courier, monospace;
+    font-weight: 400;
     font-size: 4em;
-    color: #000;
+    color: #090807;
     border-right: 2px solid #333;
     white-space: nowrap;
     overflow-x: hidden;
@@ -287,6 +364,8 @@ nav ul li{
   
   #text {
     display: inline-block;
+    font-family: "Italiana", sans-serif;
+    font-weight: bold;
   }
 
  
