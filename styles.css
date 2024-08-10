@@ -355,7 +355,7 @@ nav ul li a{
     align-items: center;
     font-weight: 400;
     font-size: 4em;
-    color: #090807;
+    color: #fff; /* cambiar  */
     border-right: 2px solid #333;
     white-space: nowrap;
     overflow-x: hidden;
@@ -363,6 +363,7 @@ nav ul li a{
   }
   
   #text {
+    font-style: italic;
     display: inline-block;
     font-family: "Italiana", sans-serif;
     font-weight: bold;
