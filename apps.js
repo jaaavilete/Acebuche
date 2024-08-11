@@ -14,6 +14,9 @@ window.addEventListener('scroll', function() {
     }
 });
 
+
+
+
 const words = ["Calidad", "Compromiso", "Acebuche"]; // Pensar en otra palabra en sustitucion a Acebuche
 let currentWordIndex = 0;
 let currentCharIndex = 0;
@@ -48,3 +51,26 @@ function type() {
 type();
 
 
+
+
+
+
+/*Imagen cartas*/ 
+function mostrarImagen() {
+    document.getElementById('imagenFullScreen').style.display = 'block';
+}
+
+function ocultarImagen() {
+    document.getElementById('imagenFullScreen').style.display = 'none';
+}
+
+
+
+
+/*Para que suba mas smooooooth*/
+function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
