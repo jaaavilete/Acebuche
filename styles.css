@@ -209,6 +209,18 @@ nav ul li a{
     width: 100%;
 }
 
+#imagenFullScreen {
+    display: none; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover; 
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 1000;
+}
+
 .cartas-h2{
     font-family: "Inria Serif", serif;
     font-weight: bold;
@@ -258,6 +270,7 @@ nav ul li a{
     border: none;
     background-color: #35634A;
     color: #fff;
+    cursor: pointer;
 }
 /*--------------Populares----------------*/
 
@@ -383,28 +396,143 @@ nav ul li a{
 }
 /*------------------Reseñas-------------------*/
 
-.reseñas{
+.reseñas-background{
     width: 100%;
-    height:55vh;
-    background-color: #deede5;
-    padding: 60px;
-    margin-top: 50px;
+    height: 80vh;
+    background-color: #2F4F4F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.reseñas h2{
+.reseñas > h2{
     font-family: "Inria Serif", serif;
     font-weight: bold;
     font-size:3.3em;
     text-align: center;
-    margin-bottom: 90px;
+    margin: 90px;
     border-bottom: 2px #2F4F4F solid;
 }
+
+.reseñas-container{
+    min-width: 60vh;
+    min-height: 40vh;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.reseñas-container > p{
+    padding: 20%;
+    font-family: "Inria Serif", serif;
+    font-size:2em;
+}
+
+.reseña-img{
+    width: 30vh;
+    position: relative;
+    left: 3%;
+    top: -35%;
+    border-radius: 10px;
+}
+
+.reseñas-button{
+    width: 40%;
+    margin-bottom: 10%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px #2F4F4F solid;
+    background-color: #e8f1f3;
+    cursor: pointer;
+    text-align: center;
+}
+
+.reseña-img2{
+    width: 30vh;
+    position: relative;
+    right: 3%;
+    bottom: -10%;
+    border-radius: 10px;
+}
+
+/*.reseñas{
+    width: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.reseñas > h2{
+    width: 100%;
+    font-family: "Inria Serif", serif;
+    font-weight: bold;
+    font-size:3.3em;
+    text-align: center;
+    margin: 90px;
+    border-bottom: 2px #2F4F4F solid;
+}
+.carousel-container {
+    width: 50%;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}*/
 
 /*------------------Vuelve texto final-------------------*/
 
 .final-text{
     width:100%;
     margin: 14vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .final-text-h2{
     text-align: center;
@@ -412,12 +540,20 @@ nav ul li a{
     font-size: 3.3rem; 
 }
 
+.flecha{
+    width: 70%;
+    margin-top: 10vh;
+}
+button {
+    margin: 20px;
+}
+
 
 /*------------------Footer-------------------*/
 
 footer{
     max-width:100vw;
-    margin-top:200px;
+    margin-top:100px;
     background-color: #EBF4EF;
     padding: 6vh;
 }
@@ -443,6 +579,11 @@ footer p{
 }
 .footer-contactanos{
     width: 20%;
+}
+.footer-contactanos > p > a{
+    font-family: "Inria Serif", serif;
+    font-weight: bold;
+    color: #314b89;
 }
 .footer-desarrollado{
     width: 20%;

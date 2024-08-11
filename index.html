@@ -10,7 +10,7 @@
 <body>
     <header>
         <a href="#" class="nav-title">Acebuche</a>
-        <nav>
+        <nav id="nav">
             <ul>
                 <li><a href="#novedades">Novedades</a></li>
                 <li><a href="#carta">Carta</a></li>
@@ -67,14 +67,14 @@
 
     <section id="carta" class="cartas" aria-label="Sección de cartas del restaurante">
         <h2 class="cartas-h2">Cartas</h2>
-
+        <img id="imagenFullScreen" src="assets/carta.jpeg" alt="Imagen a pantalla completa" onclick="ocultarImagen()">
             <div class="carta-container">
                 <img src="assets/carta.png" class="cartas-img">
                 <div class="carta-content">
                     <div class="text-container">
                         <h3>Café</h3>
                         <p>En nuestra carta cafe encontraras diferente tipos de batidos naturales.</p>
-                        <button class="card-button">Ver carta</button>
+                        <button class="card-button" onclick="mostrarImagen()">Ver carta</button>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                     <div class="text-container">
                         <h3>Restaurante</h3>
                         <p>En nuestra carta cafe encontraras diferente tipos de batidos naturales.</p>
-                        <button class="card-button">Ver carta</button>
+                        <button class="card-button" onclick="mostrarImagen()">Ver carta</button>
                     </div>
                 </div>
                     <img src="assets/carta.png" class="cartas-img">
@@ -120,21 +120,52 @@
         </div>
     </section>
 
-    <section id="reseñas" class="reseñas">
+    <!--<section id="reseñas" class="reseñas">
         <h2>Reseñas</h2>
-        <div class="reseñas-img"></div>
-        <div class="reviews" data-romw-token="EhZ4jycrx01TNqA7NOf5amRXlXWs8Y2FUcpO3i18XtPGT6pnaS"></div>
-        <script src="https://reviewsonmywebsite.com/js/v2/embed.js?id=7bf8acda5d5930b1a9db343a4ec1b31c" type="text/javascript"></script>
-    </section>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="assets/reseña1.png" alt="Imagen 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/reseña2.png" alt="Imagen 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="batido3.png" alt="Imagen 3">
+                </div>
+            </div>
+            <button class="prev">‹</button>
+            <button class="next">›</button>
+        </div>
+        </section>-->
+        
+        <section id="reseñas" class="reseñas">
+            <h2>Reseñas</h2>
+            <div class="reseñas-background">
+                <img src="assets/reseña2.png" class="reseña-img">
+                <div class="reseñas-container">
+                    <p>Las reseñas de nuestros clientes hablan por nosotros.</p>
+                    <a href="https://www.google.com/search?sca_esv=f7c375419f60a470&rlz=1C1VDKB_esES1030ES1030&hl=es-ES&tbm=lcl&sxsrf=ADLYWIIrBWWbTO0enFIgPHpBlofHwPRP5A:1723386714723&q=Acebuche+Rese%C3%B1as&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxtDAyMTCwtDQyMTY2NjUytzQ3MdzAyPiKUdAxOTWpNDkjVSEotTj18MbE4kWsmGIAKsYQ0kMAAAA&rldimm=18240099243335279741&sa=X&ved=2ahUKEwiV-8Pnk-2HAxX1UqQEHfCKAh4Q9fQKegQINBAF&biw=1536&bih=695&dpr=1.25#lkt=LocalPoiReviews" target="_blank" class="reseñas-button">Ver más reseñas
+                    </a>
+                </div>
+                <img src="assets/reseña2.png" class="reseña-img2">
+            </div>
+        </section>
+    
     <section class="final-text">
         <h2 class="final-text-h2">¡Te estaremos esperando!</h2>
+        <a href="#top">
+            <img src="assets/flecha.png" alt="Subir" class="flecha">
+        </a>
     </section>
+
     <footer id="footer">
         <div class="footer-content">
             <div class="footer-contactanos">
                 <h2>Contáctanos</h2>
-                <p>Teléfono: 112 123 42 42:</p>
-                <p>Email: buenastardes@gmail.com</p>
+                <p>Teléfono:
+                <a href="tel:653816454">+34 653 81 64 54</a></p>
+                <p>Email: <a href="mailto:example@example.com">policianacional@gmail.com</a></p>
                 <p>Avenida de la Constitución, 12</p>
             </div>
             <div class="footer-desarrollado">
@@ -142,7 +173,7 @@
                 <img>
             </div>
             <div class="footer-logo">
-                <h2>aqui iria el logo</h2><img src="">
+                <img class="arbol" src="assets/acebuche.png">
             </div>
         </div>
     </footer>
