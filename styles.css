@@ -234,7 +234,13 @@ nav ul li a{
 .cartas-img{
     width: 35%;
     min-width: 400px;
-    border-radius: 20px;
+    border-radius: 20px 0 0 20px;
+}
+
+.cartas-img2{
+    width: 35%;
+    min-width: 400px;
+    border-radius:  0 20px 20px 0 ;
 }
 
 .carta-content{
@@ -527,6 +533,8 @@ footer p{
 @media only screen and (width < 800px){
     .welcome{
         flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
     }
     .welcome img{
         width:80%;
@@ -556,9 +564,6 @@ footer p{
 
 
 
-.ul-nav:hover a{
-    border-bottom: 1px #fff solid ;
-}             
 
 
 
