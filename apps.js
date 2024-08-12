@@ -63,14 +63,3 @@ function mostrarImagen() {
 function ocultarImagen() {
     document.getElementById('imagenFullScreen').style.display = 'none';
 }
-
-
-
-
-/*Para que suba mas smooooooth*/
-function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }
