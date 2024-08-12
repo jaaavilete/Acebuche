@@ -368,6 +368,7 @@ nav ul li a{
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 .reseñas > h2{
@@ -388,20 +389,13 @@ nav ul li a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-right: 10%;
 }
 
 .reseñas-container > p{
     padding: 20%;
     font-family: "Inria Serif", serif;
     font-size:2em;
-}
-
-.reseña-img{
-    width: 30vh;
-    position: relative;
-    left: 3%;
-    top: -35%;
-    border-radius: 10px;
 }
 
 .reseñas-btn{
@@ -416,79 +410,45 @@ nav ul li a{
     Color: #2F4F4F;
 }
 
+.reseña-img1{
+    width: 30vh;
+    position: relative;
+    left: 20%;
+    top: -35%;
+    border-radius: 10px;
+}
+
+.reseña-img3{
+    width: 30vh;
+    position: relative;
+    left: 15%;
+    bottom: -1%;
+    border-radius: 10px;
+}
+
+.reseña-img5{
+    width: 30vh;
+    position: relative;
+    left: -6%;
+    bottom: -30%;
+    border-radius: 10px;
+}
+
 .reseña-img2{
     width: 30vh;
     position: relative;
-    right: 3%;
+    right: 12%;
     bottom: -10%;
     border-radius: 10px;
 }
 
-/*.reseñas{
-    width: 100%;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
-
-.reseñas > h2{
-    width: 100%;
-    font-family: "Inria Serif", serif;
-    font-weight: bold;
-    font-size:3.3em;
-    text-align: center;
-    margin: 90px;
-    border-bottom: 2px #2F4F4F solid;
-}
-.carousel-container {
-    width: 50%;
-    max-width: 800px;
-    overflow: hidden;
+.reseña-img4{
+    width: 30vh;
     position: relative;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.carousel-slide img {
-    max-width: 100%;
+    right: 20%;
+    top: -25%;
     border-radius: 10px;
 }
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}*/
 
 /*------------------Vuelve texto final-------------------*/
 
@@ -557,6 +517,10 @@ footer p{
 .footer-logo{
     width: 20%;
 }
+
+
+
+
 /*----------------------RESPONSIVE----------------------*/
 
 
@@ -585,11 +549,25 @@ footer p{
 
 }
 
+
+
+
                  /*--------------------------SECCIÓN: EFECTOS--------------------*/
 
 
 
+.ul-nav:hover a{
+    border-bottom: 1px #fff solid ;
+}             
+
+
+
+
 /*--------------EFECTO TYPEWRITER INICIAL--------------*/
+
+
+
+
 #typewriter {
     display: flex;
     justify-content: center;
