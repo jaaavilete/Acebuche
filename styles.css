@@ -45,6 +45,7 @@ nav ul li a{
     color:#FEFDFB;
 }
 
+
 /* ------------ Inicio ------------*/
 .inicio{
     max-width: 100%;
@@ -92,7 +93,6 @@ nav ul li a{
 .welcome-text{
     display:flex;
     flex-direction:column;
-    margin-left:40px;
     gap: 20px;
     
 }
@@ -370,6 +370,7 @@ nav ul li a{
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
+    position: relative;
 }
 
 .reseñas > h2{
@@ -390,7 +391,6 @@ nav ul li a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-right: 10%;
 }
 
 .reseñas-container > p{
@@ -411,43 +411,35 @@ nav ul li a{
     Color: #2F4F4F;
 }
 
-.reseña-img1{
-    width: 30vh;
-    position: relative;
-    left: 20%;
-    top: -35%;
-    border-radius: 10px;
-}
-
 .reseña-img3{
     width: 30vh;
-    position: relative;
-    left: 15%;
-    bottom: -1%;
+    position: absolute;
+    left: 12%;
+    bottom: 10%;
     border-radius: 10px;
 }
 
 .reseña-img5{
     width: 30vh;
-    position: relative;
-    left: -6%;
-    bottom: -30%;
+    position: absolute;
+    left: 5%;
+    bottom: 50%;
     border-radius: 10px;
 }
 
 .reseña-img2{
     width: 30vh;
-    position: relative;
+    position: absolute;
     right: 12%;
-    bottom: -10%;
+    bottom: 10%;
     border-radius: 10px;
 }
 
 .reseña-img4{
     width: 30vh;
-    position: relative;
-    right: 20%;
-    top: -25%;
+    position: absolute;
+    right: 5%;
+    bottom: 50%;
     border-radius: 10px;
 }
 
@@ -521,7 +513,6 @@ footer p{
 
 
 
-
 /*----------------------RESPONSIVE----------------------*/
 
 
@@ -549,7 +540,7 @@ footer p{
     }
     .cartas-img{
         object-fit: cover;
-        min-width:245px;
+        min-width:100px;
         height: 100%;
     }
     .text-container h3{
@@ -564,7 +555,23 @@ footer p{
     .cartas-content{
         min-width: 50%;
     }
+    .reseñas-container{
+        max-width: 20vh;
+    }
+    .reseñas-background img{
+        max-width: 250px;
+    }
+    .reseñas-container p{
+        font-size: 1em;
+    }
+    .reseñas-btn{
+        width: 20%;
+        height: 10%;
+    }
+    
 }
+
+
 @media only screen and (width > 1200px){
     .carta-der{
         border-top-right-radius: 30px;
