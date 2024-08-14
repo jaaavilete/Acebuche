@@ -74,3 +74,19 @@ function mostrarImagen() {
 function ocultarImagen() {
     document.getElementById('imagenFullScreen').style.display = 'none';
 }
+
+/*Animación scroll hojas*/ 
+document.addEventListener('scroll', () => {
+    const screenWidth = window.innerWidth;
+    const scrollDer = document.querySelector('.der');
+    const scrollIzq = document.querySelector('.izq');
+    const rect = scrollDer.getBoundingClientRect();
+    if (screenWidth >= 800 && screenWidth <= 1800)
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            scrollDer.style.right = '-15%';
+            scrollIzq.style.left = '-10%';
+        } else {
+            scrollDer.style.right = '0';
+            scrollIzq.style.left = '0';
+        }
+});
