@@ -36,7 +36,9 @@ header{
     font-family: "Inria Serif", serif;
     font-weight: bold;
 }
-
+.nav-title:hover{
+    color:#eff5f5;
+}
 nav ul{
     display: flex;
     justify-content: space-evenly;
@@ -46,8 +48,29 @@ nav ul li a{
     font-family: "Inria Serif", serif;
     font-weight: 400;
     color:#FEFDFB;
+    position:relative;
 }
-
+nav ul li a{
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    color:#FEFDFB;
+    position:relative;
+}
+nav ul li a::before{
+    content:'';
+    position:absolute;
+    bottom:-3px;
+    border-radius: 3px;
+    background-color:#FEFDFB;
+    height: 3px;
+    transition: width .3s, left .3s;
+    width:0;
+    left:50%;
+}
+nav ul li a:hover::before{
+    width:100%;
+    left:0%;
+}
 
 /* ------------ Inicio ------------*/
 .inicio{
@@ -123,9 +146,11 @@ nav ul li a{
 
 .izq{
     left: 0;
+    transition: left .5s;
 }
 .der{
     right: 0;
+    transition: right .5s;
 }
 
 .novedades{
@@ -581,10 +606,11 @@ nav ul li a{
     font-family: "Inria Serif", serif;
     font-size: 3.3rem; 
 }
-
-.flecha{
-    width: 70%;
+.final-text a{
     margin-top: 10vh;
+}
+.flecha{
+    max-width:70%;
 }
 button {
     margin: 20px;
@@ -592,7 +618,12 @@ button {
 
 
 /*------------------Footer-------------------*/
-
+.final-text-h2{
+    font-size: 2.3rem; 
+}
+.flecha{
+    max-width:100%;
+}
 footer{
     max-width:100vw;
     margin-top:100px;
@@ -629,9 +660,13 @@ footer p{
 }
 .footer-desarrollado{
     width: 20%;
+    display:none;
 }
 .footer-logo{
     width: 20%;
+}
+.footer-logo img{
+    max-width: 100%;
 }
 
 
@@ -640,6 +675,12 @@ footer p{
 
 
 @media only screen and (width < 800px){
+    footer p{
+        font-size: .8rem;
+    }
+    footer h2{
+        font-size: 1.2rem;
+    }
     .welcome{
         flex-direction: column-reverse;
         text-align: center;
@@ -647,8 +688,7 @@ footer p{
     }
     .welcome img{
         width:80%;
-        margin-top: 5vh;
-        object-fit: cover;
+        margin-top:35px;
     }
     .novedades-cards{
         flex-direction: column;
@@ -663,7 +703,7 @@ footer p{
     }
     .cartas-img{
         object-fit: cover;
-        min-width:100px;
+        min-width:240px;
         height: 100%;
     }
     .text-container h3{
@@ -689,7 +729,15 @@ footer p{
     }
     
 }
-
+@media only screen and (width < 500px){
+    .cartas-img{
+        min-width: unset;
+        height:150px;
+    }
+    .horarios > h2, .reseñas > h2, .ubicacion > h2{
+        font-size:2.6em;
+    }
+}
 @media screen and (width < 1032px){
     .reseña-img2, .reseña-img3, .reseña-img4, .reseña-img5{
         display: none;
@@ -711,8 +759,38 @@ footer p{
     }
 }
 
+/* @media (width > 800px) and (width < 1800px){
+    .der{
+        animation-name: moveRight;
+        animation-duration: 1ms;
+        animation-fill-mode: both;
+        animation-timeline: scroll();
+    }
+    .izq{
+        animation-name: moveLeft;
+        animation-duration: 1ms;
+        animation-fill-mode: both;
+        animation-timeline: scroll();
+    }
+    
+}
 
-
+@keyframes moveRight{
+    from{
+        right:0;
+    }
+    to{
+        right:-15%;
+    }
+}
+@keyframes moveLeft{
+   from{
+        left:0;
+    }
+    to{
+        left:-10%;
+    } 
+} */
 /*--------------EFECTO TYPEWRITER INICIAL--------------*/
 
 
