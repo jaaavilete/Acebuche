@@ -1,18 +1,29 @@
+let ticking = false;
+
 window.addEventListener('scroll', function() {
-    var header = document.querySelector('header');
-    var welcome = document.querySelector('.welcome');
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            var header = document.querySelector('header');
+            var welcome = document.querySelector('.welcome');
 
-    // Obtener la posición del header y la sección de welcome
-    var headerBottom = header.getBoundingClientRect().bottom;
-    var welcomeTop = welcome.getBoundingClientRect().top;
+            // Obtener la posición del header y la sección de welcome
+            var headerBottom = header.getBoundingClientRect().bottom;
+            var welcomeTop = welcome.getBoundingClientRect().top;
 
-    // Cambiar el color de fondo del header cuando llegue a la sección welcome
-    if (headerBottom >= welcomeTop) {
-        header.style.backgroundColor = '#2F4F4F'; // Cambia a tu color preferido
-    } else {
-        header.style.backgroundColor = 'transparent'; // O vuelve al color original
+            // Cambiar el color de fondo del header cuando llegue a la sección welcome
+            if (headerBottom >= welcomeTop) {
+                header.style.backgroundColor = '#2F4F4F'; // Cambia a tu color preferido
+            } else {
+                header.style.backgroundColor = 'transparent'; // O vuelve al color original
+            }
+
+            ticking = false;
+        });
+
+        ticking = true;
     }
 });
+
 
 
 
@@ -31,17 +42,17 @@ function type() {
     
     if (!isDeleting && currentCharIndex < currentWord.length) {
         currentCharIndex++;
-        delay = 230; // Velocidad de escritura
+        delay = 230;
     } else if (isDeleting && currentCharIndex > 0) {
         currentCharIndex--;
-        delay = 100; // Velocidad de borrado
+        delay = 100;
     } else if (!isDeleting && currentCharIndex === currentWord.length) {
-        delay = 3000; // Tiempo de espera antes de borrar
+        delay = 3000;
         isDeleting = true;
     } else if (isDeleting && currentCharIndex === 0) {
         isDeleting = false;
-        currentWordIndex = (currentWordIndex + 1) % words.length; // Cambia a la siguiente palabra
-        delay = 500; // Tiempo de espera antes de comenzar la nueva palabra
+        currentWordIndex = (currentWordIndex + 1) % words.length;
+        delay = 500;
     }
 
     setTimeout(type, delay);

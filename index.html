@@ -34,13 +34,13 @@
     <section id="novedades" class="novedades" aria-label="Sección de novedades">
 
         <h2>Novedades</h2>
-        <img src="assets/hoja_izq.png" class="hoja izq" alt="hoja">
-        <img src="assets/hoja_der.png" class="hoja der" alt="hoja">
+        <img loading="lazy" src="assets/hoja_izq.png" class="hoja izq" alt="hoja">
+        <img loading="lazy" src="assets/hoja_der.png" class="hoja der" alt="hoja">
 
         <div class="novedades-cards">
 
             <div class="novedades-card">
-                <div class="novedades-card-img"><img src="assets/batido1.png"></div>
+                <div class="novedades-card-img"><img loading="lazy"src="assets/batido1.png"></div>
                 <div class="novedades-text">
                     <h3>Batido natural</h3>
                     <p>Elaborado con frutas naturales</p>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="novedades-card">
-                <div class="novedades-card-img"><img src="assets/batido1.png"></div>
+                <div class="novedades-card-img"><img loading="lazy" src="assets/batido1.png"></div>
                 <div class="novedades-text">
                     <h3>Batido natural</h3>
                     <p>Elaborado con frutas naturales</p>
@@ -56,7 +56,7 @@
             </div>
 
             <div class="novedades-card">
-                <div class="novedades-card-img"><img src="assets/batido1.png"></div>
+                <div class="novedades-card-img"><img loading="lazy" src="assets/batido1.png"></div>
                 <div class="novedades-text">
                     <h3>Batido natural</h3>
                     <p>Elaborado con frutas naturales</p>
@@ -67,9 +67,9 @@
 
     <section id="carta" class="cartas" aria-label="Sección de cartas del restaurante">
         <h2 class="cartas-h2">Cartas</h2>
-        <img id="imagenFullScreen" src="assets/carta.jpeg" alt="Imagen a pantalla completa" onclick="ocultarImagen()">
+        <img loading="lazy" id="imagenFullScreen" src="assets/carta.jpeg" alt="Imagen a pantalla completa" onclick="ocultarImagen()">
             <div class="carta-container">
-                <img src="assets/carta.png" class="cartas-img">
+                <img loading="lazy" src="assets/carta.png" class="cartas-img">
                 <div class="carta-content carta-der">
                     <div class="text-container">
                         <h3>Café</h3>
@@ -87,7 +87,7 @@
                         <button class="card-button" onclick="mostrarImagen()">Ver carta</button>
                     </div>
                 </div>
-                    <img src="assets/carta.png" class="cartas-img">
+                    <img loading="lazy" src="assets/carta.png" class="cartas-img">
             </div>
         
     </section>
@@ -95,12 +95,46 @@
         <div class="galeria-title">
             <h2>Galería</h2>
         </div>
-        <div class="galeria-img">
-            <img src="assets/batido2.png" alt="">
-            <img src="assets/batido2.png" alt="">
-            <img src="assets/batido2.png" alt="">
-            <img src="assets/batido2.png" alt="">
-            <img src="assets/batido2.png" alt="">
+        <div class="container">
+            <span class="slider" id="slider1"></span>
+            <span class="slider" id="slider2"></span>
+            <span class="slider" id="slider3"></span>
+            <span class="slider" id="slider4"></span>
+            <span class="slider" id="slider5"></span>
+            <span class="slider" id="slider6"></span>
+            <span class="slider" id="slider7"></span>
+    
+            <div class="imgContainer">
+    
+               <div class="slide_div" id="slide_1">
+                <img src="assets/batido2.png" alt="" class="img" id="img1">
+                <a href="#slider1" class="button" id="button1"></a>
+               </div>
+               <div class="slide_div" id="slide_2">
+                <img src="assets/batido2.png" alt="" class="img" id="img2">
+                <a href="#slider2" class="button" id="button2"></a>
+               </div>
+               <div class="slide_div" id="slide_3">
+                <img src="assets/batido2.png" alt="" class="img" id="img3">
+                <a href="#slider3" class="button" id="button3"></a>
+               </div>
+               <div class="slide_div" id="slide_4">
+                <img src="assets/batido2.png" alt="" class="img" id="img4">
+                <a href="#slider4" class="button" id="button4"></a>
+               </div>
+               <div class="slide_div" id="slide_5">
+                <img src="assets/batido2.png" alt="" class="img" id="img5">
+                <a href="#slider5" class="button" id="button5"></a>
+               </div>
+               <div class="slide_div" id="slide_6">
+                <img src="assets/batido2.png" alt="" class="img" id="img6">
+                <a href="#slider6" class="button" id="button6"></a>
+               </div>
+               <div class="slide_div" id="slide_7">
+                <img src="assets/batido2.png" alt="" class="img" id="img7">
+                <a href="#slider7" class="button" id="button7"></a>
+               </div>
+            </div>
         </div>
     </section>
     <section id="ubicacion" class="ubicacion">
@@ -113,7 +147,7 @@
         <h2>Horarios</h2> 
         <div class="horarios-fondo">
             <div class="horarios-div">
-                <img src="assets/horarios.jpg" class="horarios-img">
+                <img loading="lazy" src="assets/horarios.jpg" class="horarios-img">
             </div>
         </div>
     </section>
@@ -140,22 +174,22 @@
         <section id="reseñas" class="reseñas">
             <h2>Reseñas</h2>
             <div class="reseñas-background">
-                <img src="assets/reseña3.png" class="reseña-img3">
-                <img src="assets/reseña5.png" class="reseña-img5">
+                <img loading="lazy" src="assets/reseña3.png" class="reseña-img3">
+                <img loading="lazy" src="assets/reseña5.png" class="reseña-img5">
                 <div class="reseñas-container">
                     <p>Las reseñas de nuestros clientes hablan por nosotros.</p>
                     <a href="https://www.google.com/search?sca_esv=f7c375419f60a470&rlz=1C1VDKB_esES1030ES1030&hl=es-ES&tbm=lcl&sxsrf=ADLYWIIrBWWbTO0enFIgPHpBlofHwPRP5A:1723386714723&q=Acebuche+Rese%C3%B1as&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxtDAyMTCwtDQyMTY2NjUytzQ3MdzAyPiKUdAxOTWpNDkjVSEotTj18MbE4kWsmGIAKsYQ0kMAAAA&rldimm=18240099243335279741&sa=X&ved=2ahUKEwiV-8Pnk-2HAxX1UqQEHfCKAh4Q9fQKegQINBAF&biw=1536&bih=695&dpr=1.25#lkt=LocalPoiReviews" target="_blank" class="reseñas-btn">Ver más reseñas
                     </a>
                 </div>
-                <img src="assets/reseña2.png" class="reseña-img2">
-                <img src="assets/reseña4.png" class="reseña-img4">
+                <img loading="lazy" src="assets/reseña2.png" class="reseña-img2">
+                <img loading="lazy" src="assets/reseña4.png" class="reseña-img4">
             </div>
         </section>
     
     <section class="final-text">
         <h2 class="final-text-h2">¡Te estaremos esperando!</h2>
         <a href="#top">
-            <img src="assets/flecha.png" alt="Subir" class="flecha">
+            <img loading="lazy" src="assets/flecha.png" alt="Subir" class="flecha">
         </a>
     </section>
 
@@ -173,7 +207,7 @@
                 <img>
             </div>
             <div class="footer-logo">
-                <img class="arbol" src="assets/acebuche.png">
+                <img loading="lazy" class="arbol" src="assets/acebuche.png">
             </div>
         </div>
     </footer>
