@@ -1,16 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Italiana&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
     font-family: sans-serif;
-    scroll-behavior: smooth;
 }
 
 body{
     overflow-x:hidden;
 }
+/* @media (prefers-color-scheme: dark) {
+    :root {
+      --negro: #ececec;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      -webkit-animation: none !important;
+              animation: none !important;
+      -webkit-transition: none !important;
+      transition: none !important;
+    }
+  } */
 /* ------------ nav ------------*/
 li{
     list-style:none;
@@ -18,17 +34,29 @@ li{
 a{
     text-decoration: none;
 }
-header{
-    position: fixed;
+
+.button {
+  font-size: 1em;
+  background-color: transparent;
+}
+
+.svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+.header{
+  position: fixed;
     width:100vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height:10%;
     z-index: 10000000;
     transition: background-color .4s;
+    padding: 1em; 
+    flex-flow: row wrap;
 }
-
 .nav-title{
     text-decoration: none;
     color:#FEFDFB;
@@ -43,12 +71,8 @@ nav ul{
     display: flex;
     justify-content: space-evenly;
     gap: 25px;
-}
-nav ul li a{
-    font-family: "Inria Serif", serif;
-    font-weight: 400;
-    color:#FEFDFB;
-    position:relative;
+    text-align: center;
+    padding:0;
 }
 nav ul li a{
     font-family: "Inria Serif", serif;
@@ -70,6 +94,15 @@ nav ul li a::before{
 nav ul li a:hover::before{
     width:100%;
     left:0%;
+}
+.header .button{
+  display: none;
+  border:none;
+}
+.header .svg{
+  width:2em;
+  height:2em;
+  fill:white;
 }
 
 /* ------------ Inicio ------------*/
@@ -187,7 +220,7 @@ nav ul li a:hover::before{
 
 .novedades-card{
     width:25%;
-    max-width: 300px;
+    width: 300px;
     border-radius: 35px;
     position:relative;
 }
@@ -306,6 +339,7 @@ nav ul li a:hover::before{
 
 .galeria{
     width:100%;
+    margin-bottom: 20vh;
 }
 .galeria-title{
     width:100%;
@@ -321,137 +355,109 @@ nav ul li a:hover::before{
     text-align: center;
     color:#FEFDFB;
 }
-
-.container{
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow: hidden;
+h4,small,a{
+    margin: 0;
+    padding: 0;
 }
 
-.imgContainer{
+.Carousel{
     width: 100%;
-    height: 600px;
-    position: absolute;
+    margin: 0px 60px;
+    margin:auto;
+}
+.Carousel h2{
+    font-size: 26px;
+    line-height: 38px;
+    padding-bottom: 24px;
+    opacity: .9;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
+}
+
+/* images */
+
+.slick-list{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 304px;
+    padding: 10px 0px;
+    margin: 0px auto;
+    max-width: 90vw;
+    overflow: hidden;
+}
+.slick-track{
+    position: relative;
+    top: 0;
     left: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    transition: 1s;
+    transition: .5s ease-in-out;
 }
-
-.slide_div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 30px 0 30px;
-}
-
-.slide_div img{
+.slick{
     position: relative;
-    height: 370px;
-    width: 240px;
-    filter: saturate(10%);
-    transition: 0.7s;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-    object-fit: cover;
+    width: 275px;
+    padding: 0 18px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
 }
-
-.button{
+.slick h4{
     position: absolute;
-    width: 240px;
-    height: 370px;
-    transition: 0.7s;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
+    z-index: 1;
+    font-size: 22px;
+    line-height: 23px;
+    color: #fff;
+    padding: 15px;
+}
+.slick h4 small{
+    font-size: 15px;
+    display: block;
+}
+.slick a img{
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
+    transition: .3s ease-in-out;
+}
+.slick a img:hover{
+    opacity: .85;
 }
 
-.button:hover{
-    background-color: rgba(0, 0, 0, 0.2);
+/* buttons */
+
+.slick-arrow{
+    border-radius: 30px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
+    border: 0;
+    cursor: pointer;
+}
+.slick-arrow:focus{
+    outline: 0;
+}
+.slick-arrow svg{
+    width: 12px;
+    height: 100%;
+    color: rgba(0,0,0,.7);
+}
+.slick-prev{
+    left: 0px;
+}
+.slick-next{
+    right: 0px;
 }
 
-#slider1:target ~ .imgContainer #img1,
-#slider1:target ~ .imgContainer #button1{
-    width: 390px;
-    height: 600px;
-    background-color: transparent;
-    filter: saturate(100%);
-}
-
-#slider2:target ~ .imgContainer #img2,
-#slider2:target ~ .imgContainer #button2{
-    width: 390px;
-    height: 600px;
-    background-color: transparent;
-    filter: saturate(100%);
-}
-
-#slider3:target ~ .imgContainer #img3,
-#slider3:target ~ .imgContainer #button3{
-    width: 390px;
-    height: 600px;
-    background-color: transparent;
-    filter: saturate(100%);
-}
-
-#slider4:target ~ .imgContainer #img4,
-#slider4:target ~ .imgContainer #button4{
-    width: 390px;
-    height: 600px;
-    background-color: transparent;
-    filter: saturate(100%);
-}
-
-#slider5:target ~ .imgContainer #img5,
-#slider5:target ~ .imgContainer #button5{
-    width: 390px;
-    height: 600px;
-    background-color: transparent;
-    filter: saturate(100%);
-}
-
-#slider6:target ~ .imgContainer #img6,
-#slider6:target ~ .imgContainer #button6{
-    width: 390px;
-    height: 600px;
-    background-color: transparent;
-    filter: saturate(100%);
-}
-
-#slider7:target ~ .imgContainer #img7,
-#slider7:target ~ .imgContainer #button7{
-    width: 390px;
-    height: 600px;
-    background-color: transparent;
-    filter: saturate(100%);
-}
-
-
-#slider1:target ~ .imgContainer{
-    left: 60%;
-}
-#slider2:target ~ .imgContainer{
-    left: 40%;
-}
-#slider3:target ~ .imgContainer{
-    left: 20%;
-}
-#slider4:target ~ .imgContainer{
-    left: 0%;
-}
-#slider5:target ~ .imgContainer{
-    left: -20%;
-}
-#slider6:target ~ .imgContainer{
-    left: -40%;
-}
-#slider7:target ~ .imgContainer{
-    left: -60%;
-}
-.img{height: 370px;}
 /*--------------Ubicación----------------*/
 
 .ubicacion{
@@ -675,6 +681,44 @@ footer p{
 
 
 @media only screen and (width < 800px){
+    .header{
+        justify-content: space-between;
+    }
+    .nav-title{
+        margin-left:4%;
+    }
+    .header .button{
+        display: block;
+        cursor: pointer;
+    }
+    .header nav{
+        width:100%;
+        /* display: none; */
+        height:0;
+        pointer-events: none;
+        overflow: hidden;
+        transition: all .5s ease;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .header .nav.activo{
+        height:50vh;
+        pointer-events: auto;
+        /* background-color: #2F4F4F; */
+    }
+    .header ul{
+        flex-direction: column;
+        display:unset;
+    }
+    .header li{
+        margin: 1rem 0;
+    }
+    .header li a{
+        font-size: 1.4em;
+    }
     footer p{
         font-size: .8rem;
     }
