@@ -517,9 +517,10 @@ h4,small,a{
 
 .reseñas-background{
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
     background-color: #2F4F4F;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
@@ -537,13 +538,14 @@ h4,small,a{
 
 .reseñas-container{
     min-width: 70vw;
-    min-height: 40vh;
+    max-height: 70vh;
     background-color: #fff;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 5%;
 }
 
 .reseñas-container > p{
@@ -564,12 +566,64 @@ h4,small,a{
     Color: #2F4F4F;
 }
 
-.reseña-img3{
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    animation: slide 20s linear infinite;
+    margin: 10% 0;
+}
+
+.slide {
+    flex: 0 0 16.66%; 
+    margin: 0 2%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide768 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-66.66%); 
+    }
+}
+
+@keyframes slide480 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-83.33%); 
+    }
+}
+
+
+/*.reseña-img3{
     width: 30vh;
     position: absolute;
     left: 12%;
     bottom: 10%;
     border-radius: 10px;
+    box-shadow: 3px 6px 10px #2F4F4F;
 }
 
 .reseña-img5{
@@ -578,6 +632,7 @@ h4,small,a{
     left: 5%;
     bottom: 50%;
     border-radius: 10px;
+    box-shadow: 3px 6px 10px  #2F4F4F;
 }
 
 .reseña-img2{
@@ -586,6 +641,7 @@ h4,small,a{
     right: 12%;
     bottom: 10%;
     border-radius: 10px;
+    box-shadow: -3px 6px 10px #2F4F4F;
 }
 
 .reseña-img4{
@@ -594,7 +650,8 @@ h4,small,a{
     right: 5%;
     bottom: 50%;
     border-radius: 10px;
-}
+    box-shadow: -3px 6px 10px #2F4F4F;
+}*/
 
 
 /*------------------Vuelve texto final-------------------*/
@@ -768,10 +825,16 @@ footer p{
     .reseñas-background img{
         max-width: 250px;
     }
-    .reseñas-container p{
+    /*.reseñas-container p{
         font-size: 1em;
+    }*/
+    .reseña-img2, .reseña-img3, .reseña-img4, .reseña-img5{
+        width: 25%;
     }
-    
+    .reseña-img2, .reseña-img3{
+        display: none;
+        top: 30%;
+    }
 }
 @media only screen and (width < 500px){
     .cartas-img{
@@ -782,11 +845,13 @@ footer p{
         font-size:2.6em;
     }
 }
-@media screen and (width < 1032px){
-    .reseña-img2, .reseña-img3, .reseña-img4, .reseña-img5{
-        display: none;
+/*@media screen and (width < 1032px){
+    .reseñas-container p{
+        padding: 30%;
+        font-family: "Inria Serif", serif;
+        font-size:1.2em;
     }
-}
+}*/
 
 
 @media only screen and (width > 1200px){
@@ -800,6 +865,24 @@ footer p{
     }
     .carta-izq > .text-container{
         width:fit-content;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        animation: slide768 10s linear infinite;
+    }
+    .slide {
+        flex: 0 0 33.33%; /* 3 imágenes visibles a la vez */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        animation: slide480 10s linear infinite;
+    }
+    .slide {
+        flex: 0 0 50%; /* 2 imágenes visibles a la vez */
     }
 }
 
@@ -835,6 +918,10 @@ footer p{
         left:-10%;
     } 
 } */
+
+
+
+
 /*--------------EFECTO TYPEWRITER INICIAL--------------*/
 
 

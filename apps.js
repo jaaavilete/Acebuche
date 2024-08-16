@@ -35,10 +35,9 @@ window.addEventListener('scroll', function() {
 
 
 
+// Pensar en otra palabra en sustitucion a Acebuche
 
-
-
-const words = ["Calidad", "Compromiso", "Acebuche"]; // Pensar en otra palabra en sustitucion a Acebuche
+const words = ["Calidad", "Compromiso", "Acebuche"]; 
 let currentWordIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
@@ -71,6 +70,27 @@ function type() {
 type();
 
 
+function startTyping(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            type();  // Comienza a escribir cuando el elemento es visible
+            observer.unobserve(entry.target); // Deja de observar una vez que comienza
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const textElement = document.getElementById('text');
+    observer = new IntersectionObserver(startTyping, {
+        threshold: 0.5 // El texto debe estar al menos un 50% visible
+    });
+    observer.observe(textElement);
+});
+
+
+
+
+
 /*Imagen cartas*/ 
 function mostrarImagen() {
     document.getElementById('imagenFullScreen').style.display = 'block';
@@ -79,6 +99,9 @@ function mostrarImagen() {
 function ocultarImagen() {
     document.getElementById('imagenFullScreen').style.display = 'none';
 }
+
+
+
 
 /*Animación scroll hojas*/ 
 document.addEventListener('scroll', () => {
@@ -95,6 +118,9 @@ document.addEventListener('scroll', () => {
             scrollIzq.style.left = '0';
         }
 });
+
+
+
 
 
 /*Carrusel/Carousel */
