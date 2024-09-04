@@ -3,6 +3,7 @@
 
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 70px;
 }
 
 *{
@@ -146,6 +147,8 @@ nav ul li a:hover::before{
 
 .welcome img{
     width:50%;
+    min-width: 240px;
+    max-width: 800px;
     aspect-ratio: 4/3;
     border-radius: 30px;
 }
@@ -269,20 +272,28 @@ nav ul li a:hover::before{
 
 .cartas{
     width: 100%;
-    max-width: 1600px;
+    max-width: 1300px;
     margin:auto;
+    padding-top:90px;
 }
-
 #imagenFullScreen {
     display: none; 
-    position: fixed; 
-    top: 0;
-    left: 0;
+    position: fixed;
+    top:0;
+    left:0;
     width: 100vw; 
-    height: 100vh; 
-    object-fit: cover; 
-    background: rgba(0, 0, 0, 0.7); 
-    z-index: 1000;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75); 
+    z-index: 100000;
+}
+#imagenFullScreen img{
+    position:relative;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    width:90vw;
+    max-height:100vh;
+    
 }
 .carta-container{
     display: flex;
@@ -294,7 +305,7 @@ nav ul li a:hover::before{
     font-weight: bold;
     font-size:3.3em;
     text-align: center;
-    margin: 90px;
+    margin-bottom: 90px;
     border-bottom: 2px #2F4F4F solid;
 }
 
@@ -339,7 +350,7 @@ nav ul li a:hover::before{
 
 .galeria{
     width:100%;
-    margin-bottom: 20vh;
+    margin-top: 15vh;
 }
 .galeria-title{
     width:100%;
@@ -462,6 +473,7 @@ h4,small,a{
 
 .ubicacion{
     width: 100%;
+    padding-top: 90px;
 }
 
 .ubicacion > h2{
@@ -469,7 +481,7 @@ h4,small,a{
         font-weight: bold;
         font-size:3.3em;
         text-align: center;
-        margin: 90px;
+        margin-bottom: 90px;
         border-bottom: 2px #2F4F4F solid;
 }
 
@@ -484,6 +496,7 @@ h4,small,a{
 
 .horarios{
     width: 100%;
+    padding-top: 90px;
 }
 
 .horarios > h2{
@@ -491,7 +504,7 @@ h4,small,a{
     font-weight: bold;
     font-size:3.3em;
     text-align: center;
-    margin: 90px;
+    margin-bottom: 90px;
     border-bottom: 2px #2F4F4F solid;
 }
 
@@ -575,6 +588,7 @@ h4,small,a{
 .carousel {
     display: flex;
     animation: slide 20s linear infinite;
+    animation-direction: alternate-reverse;
     margin: 10% 0;
 }
 
@@ -584,8 +598,7 @@ h4,small,a{
 }
 
 .slide img {
-    width: 100%;
-    height: auto;
+    height: 200px;
     display: block;
 }
 
@@ -713,9 +726,6 @@ footer p{
     margin: 2vh 0;
     font-size: 1rem;
 }
-.footer-contactanos{
-    width: 20%;
-}
 .footer-contactanos > p > a{
     font-family: "Inria Serif", serif;
     font-weight: bold;
@@ -771,7 +781,7 @@ footer p{
         display:unset;
     }
     .header li{
-        margin: 1rem 0;
+        margin: 1.8rem 0;
     }
     .header li a{
         font-size: 1.4em;
@@ -786,10 +796,6 @@ footer p{
         flex-direction: column-reverse;
         text-align: center;
         justify-content: center;
-    }
-    .welcome img{
-        width:80%;
-        margin-top:35px;
     }
     .novedades-cards{
         flex-direction: column;

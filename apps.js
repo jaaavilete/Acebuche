@@ -31,6 +31,18 @@ window.addEventListener('scroll', function() {
             }
         });
     }
+    
+});
+
+const navLinks = document.querySelectorAll('.nav a');
+
+// Añade un evento de clic a cada enlace
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        // Cierra el menú hamburguesa
+        nav.classList.remove('activo');
+        pressButton = false; // Reinicia el estado del botón
+    });
 });
 
 
