@@ -191,7 +191,7 @@ nav ul li a:hover::before{
 
 .novedades{
     width:100%;
-    background-color: #B4F9A4;
+    background-color: #B4F9A4 /*#2F4F4F*/;
     padding: 90px;
     padding-bottom: 15vh;
     display:flex;
@@ -345,6 +345,11 @@ nav ul li a:hover::before{
     color: #fff;
     cursor: pointer;
     margin:0;
+}
+
+.card-button:hover{
+    transform: scale(0.95);
+    transition: 0.7s 0s;
 }
 /*--------------Galería----------------*/
 
@@ -579,6 +584,11 @@ h4,small,a{
     Color: #2F4F4F;
 }
 
+.reseñas-btn:hover{
+    transform: scale(0.95);
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
 .carousel-container {
     width: 100%;
     overflow: hidden;
@@ -598,7 +608,7 @@ h4,small,a{
 }
 
 .slide img {
-    height: 200px;
+    min-height: 150px;
     display: block;
 }
 
