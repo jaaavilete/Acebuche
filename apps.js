@@ -1,4 +1,4 @@
-/*menu hamburguesa */
+//menu hamburguesa 
 let pressButton = false;
 const button = document.querySelector('.button');
 const nav = document.querySelector('.nav');
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-/*Imagen cartas*/ 
+//Imagen cartas 
 function mostrarImagen() {
     document.getElementById('imagenFullScreen').style.display = 'block';
 }
@@ -115,7 +115,7 @@ function ocultarImagen() {
 
 
 
-/*Animación scroll hojas*/ 
+//Animación scroll hojas
 document.addEventListener('scroll', () => {
     const screenWidth = window.innerWidth;
     const scrollDer = document.querySelector('.der');
@@ -135,7 +135,7 @@ document.addEventListener('scroll', () => {
 
 
 
-/*Carrusel/Carousel */
+//Carrusel/Carousel 
 
 function App() {}
 

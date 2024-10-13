@@ -114,7 +114,7 @@ nav ul li a:hover::before{
 }
 
 .inicio{
-    background-image: url(assets/inicio.png);
+    background-image: url(assets/header2.jpeg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -961,4 +961,5 @@ footer p{
     display: inline-block;
     font-family: "Italiana", sans-serif;
     font-weight: bold;
+    height: 4em;
   }
