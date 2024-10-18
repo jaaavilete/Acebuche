@@ -1,6 +1,6 @@
 //menu hamburguesa 
 let pressButton = false;
-const button = document.querySelector('.button');
+const button = document.querySelector('.nav-btn');
 const nav = document.querySelector('.nav');
 let header = document.querySelector('header');
 let welcome = document.querySelector('.welcome');
