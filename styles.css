@@ -183,11 +183,11 @@ nav ul li a:hover::before{
 
 .izq{
     left: 0;
-    transition: left .5s;
+    transition: left .8s;
 }
 .der{
     right: 0;
-    transition: right .5s;
+    transition: right .8s;
 }
 
 .novedades{
@@ -293,7 +293,8 @@ nav ul li a:hover::before{
     left:50%;
     top:50%;
     transform:translate(-50%, -50%);
-    width:90vw;
+    width:100vw;
+    max-width:1200px;
     max-height:100vh;
     
 }
@@ -609,6 +610,7 @@ nav ul li a:hover::before{
     animation: slide 20s linear infinite;
     animation-direction: alternate-reverse;
     margin: 10% 0;
+    gap:20px;
 }
 
 .slide {
@@ -619,7 +621,6 @@ nav ul li a:hover::before{
 .slide img {
     height:100%;
     border-radius:3px;
-    display: block;
 }
 
 @keyframes slide {
@@ -845,6 +846,7 @@ footer p{
     }
     .cartas-content{
         min-width: 50%;
+        height:100%;
     }
     .reseñas-container{
         max-width: 30%;
