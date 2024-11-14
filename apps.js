@@ -49,7 +49,7 @@ navLinks.forEach(link => {
 
 // Pensar en otra palabra en sustitucion a Acebuche
 
-const words = ["Calidad", "Compromiso", "Acebuche"]; 
+const words = ["Calidad", "Sabor", "Acebuche"]; 
 let currentWordIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
