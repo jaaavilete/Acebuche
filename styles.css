@@ -262,7 +262,7 @@ nav ul li a:hover::before{
     object-fit: cover;
     align-content: center;
     border-radius: 35px 35px 0 0;
-    mask-image: radial-gradient(transparent, yellow);
+    mask-image: radial-gradient(yellow, transparent);
 }
 
 /*--------------Cartas----------------*/
