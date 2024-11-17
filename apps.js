@@ -128,3 +128,19 @@ document.addEventListener('scroll', () => {
             scrollIzq.style.left = '0';
         }
 });
+
+//Fumada de Javier
+
+const xmenu1 = document.getElementById("xmenu1");
+const xmenu = document.getElementById("xmenu");
+
+xmenu1.addEventListener("click", ()=> {
+    xmenu1.classList.replace("appearx", "hiddenx")
+    xmenu.classList.replace("hiddenx", "appearx")
+});
+
+xmenu.addEventListener("click", ()=> {
+    xmenu.classList.replace("appearx", "hiddenx")
+    xmenu1.classList.replace("hiddenx", "appearx")
+});
+
