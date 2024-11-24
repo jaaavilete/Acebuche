@@ -144,3 +144,19 @@ xmenu.addEventListener("click", ()=> {
     xmenu1.classList.replace("hiddenx", "appearx")
 });
 
+
+//   Volumen 
+
+const volumeButton = document.getElementById("volume");
+const sound = new Audio("sounds/sound.mp3");
+
+volumeButton.addEventListener("click", () => {
+    if (sound.paused) {
+        sound.play();
+    } else {
+        sound.pause();
+    }
+});
+
+//sound.play() Si descomentas esto el sonido se reproduce desde que el user entra en la web actualmente pa que suene le tieen que dar el user al botón asi que lo que mejor veas Pedro. El sonido lo puedes cambiar descargandote el video de Yt que le guste a tu padre y le pones sound.mp3 lo metes en la carpeta sound y ya estaría. Lo que mejor veas.
+
