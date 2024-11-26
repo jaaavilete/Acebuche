@@ -23,10 +23,11 @@
             <ul class="ul-nav">
                 <li><a href="#novedades">Novedades</a></li>
                 <li><a href="#carta">Carta</a></li>
-                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#galerias" href="#galeriaResponsive">Galería</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li> <!-- Galería o imágenes -->
                 <li><a href="#footer">Contacto</a></li>
                 <img src="assets/volumeUp.png" class="volume" id="volume">
+                <img src="assets/volumeDown.png" class="volumeDown" id="volumeBarra">
             </ul>
             
         </nav>
@@ -108,6 +109,7 @@
         
     </section>
 
+    <section id="galerias" aria-label="Sección de imágenes sobre el local y sus platos">
     <section id="galeria" class="galeria" aria-label="Sección de imágenes sobre el local y sus platos">
         <div class="galeria-grid">
 
@@ -124,6 +126,25 @@
             <img class="grid-6" srcset="assets/low/segundaplanta.jpeg 320w, assets/medium/segundaplanta.jpeg 480w, assets/high/segundaplanta.jpeg 800w" sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px" src="assets/high/segundaplanta.jpeg" alt="Bar Restaurante Torredelcampo Jaén">
             
         </div>
+    </section>
+
+    <section id="galeriaResponsive" class="galeriaResponsive" aria-label="Sección de imágenes sobre el local y sus platos">
+        <button class="arrow left-arrow" onclick="moveSlide(-1)">&#8249;</button>
+  <div class="carouselResponsive">
+    <div class="carouselImgResponsive">
+      <img src="assets/low/arbolnaranja.jpeg" alt="imagen arbol restaurante acebuche">
+      <img src="assets/low/arribamesa1.jpg" alt="imagen mesa restaurante acebuche">
+      <img src="assets/low/barril.jpeg" alt="imagen barril restaurante acebuche">
+      <img src="assets/low/pasteles2.jpeg" alt="imagen pasteles restaurante acebuche">
+      <img src="assets/low/tele.jpeg" alt="imagen tele restaurante acebuche">
+      <img src="assets/low/ventana1.jpeg" alt="imagen ventana restaurante acebuche">
+      <img src="assets/low/arribamesa3.jpg" alt="imagen mesa restaurante acebuche">
+      <img src="assets/low/telefono.jpg" alt="imagen mesa restaurante acebuche">
+    </div>
+  </div>
+  <button class="arrow right-arrow" onclick="moveSlide(1)">&#8250;</button>
+
+    </section>
     </section>
     <section id="ubicacion" class="ubicacion">
         <h2>Ubicación</h2>

@@ -148,15 +148,54 @@ xmenu.addEventListener("click", ()=> {
 //   Volumen 
 
 const volumeButton = document.getElementById("volume");
+const volumeBarra = document.getElementById("volumeBarra"); 
 const sound = new Audio("sounds/sound.mp3");
 
-volumeButton.addEventListener("click", () => {
-    if (sound.paused) {
-        sound.play();
-    } else {
-        sound.pause();
-    }
-});
 
-//sound.play() Si descomentas esto el sonido se reproduce desde que el user entra en la web actualmente pa que suene le tieen que dar el user al botón asi que lo que mejor veas Pedro. El sonido lo puedes cambiar descargandote el video de Yt que le guste a tu padre y le pones sound.mp3 lo metes en la carpeta sound y ya estaría. Lo que mejor veas.
+volumeBarra.style.display = "none";
 
+
+function toggleAudio() {
+  if (sound.paused) {
+    sound.play();
+    volumeButton.style.display = "block"; 
+    volumeBarra.style.display = "none";  
+  } else {
+    
+    sound.pause();
+    volumeButton.style.display = "none"; 
+    volumeBarra.style.display = "block"; 
+  }
+}
+
+
+volumeButton.addEventListener("click", toggleAudio);
+volumeBarra.addEventListener("click", toggleAudio);
+
+
+sound.play() //Si descomentas esto el sonido se reproduce desde que el user entra en la web actualmente pa que suene le tieen que dar el user al botón asi que lo que mejor veas Pedro. El sonido lo puedes cambiar descargandote el video de Yt que le guste a tu padre y le pones sound.mp3 lo metes en la carpeta sound y ya estaría. Lo que mejor veas.
+
+
+
+
+
+let currentSlide = 0;
+
+function moveSlide(direction) {
+  const slides = document.querySelector('.carouselImgResponsive');
+  const totalSlides = slides.children.length;
+
+  // Actualiza el índice del slide
+  currentSlide += direction;
+
+  // Si el índice se sale del rango, vuelve al inicio o al final
+  if (currentSlide < 0) {
+    currentSlide = totalSlides - 1;
+  } else if (currentSlide >= totalSlides) {
+    currentSlide = 0;
+  }
+
+  // Cambia la posición del carrusel
+  const slideWidth = slides.children[0].clientWidth;
+  slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
