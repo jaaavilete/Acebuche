@@ -122,6 +122,13 @@ nav ul li a:hover::before{
     cursor: pointer;
 }
 
+.volumeDown{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
 /* ------------ Inicio ------------*/
 .inicio{
     max-width: 100%;
@@ -503,6 +510,57 @@ nav ul li a:hover::before{
     right: 0px;
 }
 
+/*Responsive*/
+
+.galeriaResponsive {
+position: relative;
+width: 100%;
+max-width: 800px;
+margin: auto;
+overflow: hidden;
+}
+
+/* Contenedor de las imágenes */
+.carouselResponsive {
+display: flex;
+overflow: hidden;
+width: 100%;
+}
+
+.carouselImgResponsive {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+max-width: 100%;
+flex-shrink: 0;
+object-fit:cover;
+}
+
+.arrow {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: #2F4F4F;
+color: #fff;
+border: none;
+border-radius: 50px;
+font-size: 2rem;
+cursor: pointer;
+padding: 10px;
+z-index: 10;
+}
+
+.left-arrow {
+left: 10px;
+}
+
+.right-arrow {
+right: 10px;
+}
+
+
 /*--------------Ubicación----------------*/
 
 .ubicacion{
@@ -815,6 +873,12 @@ footer p{
 
 /*----------------------RESPONSIVE----------------------*/
 
+@media only screen and (width > 800px){
+    .galeriaResponsive{
+        display: none;
+    }
+}
+
 
 @media only screen and (width < 800px){
     .header{
@@ -843,7 +907,6 @@ footer p{
     .header .nav.activo{
         height:50vh;
         pointer-events: auto;
-        /* background-color: #2F4F4F; */
     }
     .header ul{
         flex-direction: column;
@@ -911,7 +974,10 @@ footer p{
         display: none;
         top: 30%;
     }
-}
+    .galeria{
+        display: none;
+    }
+    
 @media only screen and (width < 500px){
     .cartas-img{
         min-width: unset;
@@ -981,3 +1047,4 @@ footer p{
     font-weight: bold;
     height: 4em;
   }
+}
