@@ -74,11 +74,11 @@ nav ul{
     padding:0;
 }
 nav ul svg{
-    fill:#f8eada;
+    fill:#f8eadaaa;
     transition:fill .3s;
 }
 nav ul svg:hover{
-    fill:#e8c9a5;
+    fill:#f8eada;
 }
 nav ul li a{
     font-family: "Inria Serif", serif;
@@ -833,14 +833,15 @@ footer{
     max-width:100vw;
     margin-top:100px;
     background-color:#2F4F4F/* #EBF4EF*/ ;
+    padding-top: 80px 0;
 }
 .footer-content{
     height:30vh;
     display:flex;
     justify-content: space-around;
-    margin:auto;
     max-width: 1200px;
     padding-top: 6vh;
+    margin: 0 auto;
 }
 footer h2 {
     font-family: "Inria Serif", serif;
@@ -863,9 +864,6 @@ footer p{
 }
 
 .footer-logo{
-    max-width: 20%;
-}
-.footer-logo img{
     max-width: 100%;
 }
 
@@ -894,15 +892,25 @@ footer svg:hover{
     fill:#ffffff;
 }
 /*----------------------RESPONSIVE----------------------*/
-
-@media only screen and (width > 800px){
-    .galeriaResponsive{
-        display: none;
+@media only screen and (width < 480px){
+    .cartas-img{
+        min-width: unset;
+        height:150px;
+    }
+    .horarios > h2, .reseñas > h2, .ubicacion > h2{
+        font-size:2.6em;
+    }
+    .carousel {
+        animation: slide480 10s linear infinite;
+    }
+    .slide {
+        flex: 0 0 50%; /* 2 imágenes visibles a la vez */
     }
 }
-
-
-@media only screen and (width < 800px){
+@media only screen and (width < 768px){
+    .footer-content{
+        margin-left: 0 40px;
+    }
     .header{
         justify-content: space-between;
     }
@@ -944,7 +952,7 @@ footer svg:hover{
         font-size: .8rem;
     }
     footer h2{
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
     .welcome{
         flex-direction: column-reverse;
@@ -999,18 +1007,18 @@ footer svg:hover{
     .galeria{
         display: none;
     }
-    
-@media only screen and (width < 500px){
-    .cartas-img{
-        min-width: unset;
-        height:150px;
+    .carousel {
+        animation: slide768 10s linear infinite;
     }
-    .horarios > h2, .reseñas > h2, .ubicacion > h2{
-        font-size:2.6em;
+    .slide {
+        flex: 0 0 33.33%; /* 3 imágenes visibles a la vez */
     }
 }
-
-
+@media only screen and (width > 768px){
+    .galeriaResponsive{
+        display: none;
+    }
+}
 @media only screen and (width > 1200px){
     .carta-der{
         border-top-right-radius: 30px;
@@ -1024,21 +1032,3 @@ footer svg:hover{
         width:fit-content;
     }
 }
-
-@media (max-width: 768px) {
-    .carousel {
-        animation: slide768 10s linear infinite;
-    }
-    .slide {
-        flex: 0 0 33.33%; /* 3 imágenes visibles a la vez */
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel {
-        animation: slide480 10s linear infinite;
-    }
-    .slide {
-        flex: 0 0 50%; /* 2 imágenes visibles a la vez */
-    }
-}}
