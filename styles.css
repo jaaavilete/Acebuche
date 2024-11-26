@@ -81,6 +81,7 @@ a{
 nav ul{
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     gap: 25px;
     text-align: center;
     padding:0;
@@ -117,9 +118,10 @@ nav ul li a:hover::before{
 }
 
 .volume{
-    width: 30px;
-    height: 30px;
     cursor: pointer;
+}
+#volumeBarra{
+    display:none;
 }
 
 .volumeDown{
@@ -146,6 +148,26 @@ nav ul li a:hover::before{
     top:50%;
     transform:translate(-50%, -50%);
     font-size: 3em;
+}
+#typewriter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 4em;
+    color: #fff; /* cambiar  */
+    border-right: 2px solid #333;
+    white-space: nowrap;
+    overflow-x: hidden;
+    width: 100%; /* Controla el ancho del área de texto */
+  }
+  
+#text {
+    font-style: italic;
+    display: inline-block;
+    font-family: "Italiana", sans-serif;
+    font-weight: bold;
+    height: 4em;
 }
 
 /* ------------ Bienvenida ------------*/
@@ -513,11 +535,11 @@ nav ul li a:hover::before{
 /*Responsive*/
 
 .galeriaResponsive {
-position: relative;
-width: 100%;
-max-width: 800px;
-margin: auto;
-overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
 }
 
 /* Contenedor de las imágenes */
@@ -868,9 +890,15 @@ footer p{
     border-bottom: 1px #48f solid;
 }
 
+footer svg{
+    margin-right: 6px;
+    fill: hsl(36, 91%, 70%);
+    transition:fill .3s;
+}
 
-
-
+footer svg:hover{
+    fill:#ffffff;
+}
 /*----------------------RESPONSIVE----------------------*/
 
 @media only screen and (width > 800px){
@@ -1019,32 +1047,4 @@ footer p{
     .slide {
         flex: 0 0 50%; /* 2 imágenes visibles a la vez */
     }
-}
-
-
-/*--------------EFECTO TYPEWRITER INICIAL--------------*/
-
-
-
-
-#typewriter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 400;
-    font-size: 4em;
-    color: #fff; /* cambiar  */
-    border-right: 2px solid #333;
-    white-space: nowrap;
-    overflow-x: hidden;
-    width: 100%; /* Controla el ancho del área de texto */
-  }
-  
-  #text {
-    font-style: italic;
-    display: inline-block;
-    font-family: "Italiana", sans-serif;
-    font-weight: bold;
-    height: 4em;
-  }
-}
+}}
