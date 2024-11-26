@@ -15,19 +15,6 @@ html{
 body{
     overflow-x:hidden;
 }
-/* @media (prefers-color-scheme: dark) {
-    :root {
-      --negro: #ececec;
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      -webkit-animation: none !important;
-              animation: none !important;
-      -webkit-transition: none !important;
-      transition: none !important;
-    }
-  } */
 /* ------------ nav ------------*/
 li{
     list-style:none;
@@ -85,6 +72,13 @@ nav ul{
     gap: 25px;
     text-align: center;
     padding:0;
+}
+nav ul svg{
+    fill:#f8eada;
+    transition:fill .3s;
+}
+nav ul svg:hover{
+    fill:#e8c9a5;
 }
 nav ul li a{
     font-family: "Inria Serif", serif;
