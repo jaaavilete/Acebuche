@@ -314,49 +314,86 @@ nav ul li a:hover::before{
     margin: 15% 0% 3% 0%;
     border-bottom: 2px #2F4F4F solid;
 }
-.platos-recomendados{
+.platos-recomendados {
     width: 100vw;
-    height: 90vh;
+    height: 100vh; 
     background-color: #2F4F4F;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     align-items: center;
-
+    justify-content: center;
+    padding: 20px;
 }
-.plato{
-    max-height: 60%;
+
+.plato {
+    max-height: 100%;
+    max-width: 100%; 
     background-color: #eff5f5;
     border-radius: 5px;
-    margin: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 100%;
-    padding: 15% 3% 15% 3%;
+    padding: 10%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.plato > h4{
+
+.plato:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.plato > h4 {
     font-size: 1.5em;
     padding-bottom: 10%;
     font-family: 'Times New Roman', Times, serif;
+    color: #333;
 }
-.plato > p{
-    font-size: 80%;
+
+.plato > p {
+    font-size: 0.9em;
     text-align: center;
+    color: #666;
 }
-.img-platos{
+
+.img-platos {
     max-width: 100%;
+    max-height: 200px; 
+    object-fit: cover; 
     padding-bottom: 20%;
     border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+    .plato {
+        padding: 5%; 
+    }
 
+    .plato > h4 {
+        font-size: 1.2em; 
+    }
 
+    .plato > p {
+        font-size: 0.8em; 
+    }
 
+    .img-platos {
+        padding-bottom: 10%; 
+    }
+}
 
+@media (max-width: 480px) {
+    .platos-recomendados {
+        grid-template-columns: 1fr; 
+    }
 
-
+    .plato {
+        padding: 5%;
+    }
+}
 
 /*--------------Cartas----------------*/
 
@@ -950,7 +987,7 @@ footer svg:hover{
 /*----------------------RESPONSIVE----------------------*/
 @media only screen and (width < 480px){
     .cartas-img{
-        min-width: unset;
+        min-width: 150px;
         max-height:150px;
     }
     .horarios > h2, .reseñas > h2, .ubicacion > h2{
